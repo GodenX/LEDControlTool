@@ -1,0 +1,17 @@
+<!--miniprogram/pages/main/main.wxml-->
+<view class="page">
+  <view class="weui-cells__title">发送文本</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__bd">
+        <input class="weui-input" value="" placeholder="请输入发送信息" bindinput='onGetSendMessage' />
+      </view>
+    </view>
+  </view>
+  <view class="button-sp-area">
+    <button class="weui-btn" type="primary" plain="true" bindtap='onSendMessage' >发送消息</button>
+  </view>
+  <view class="button-sp-area">
+    <button class="weui-btn" type="primary" plain="true" bindtap='onLogout' >退出登陆</button>
+  </view>
+</view>

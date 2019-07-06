@@ -1,0 +1,32 @@
+<!--miniprogram/pages/login/login.wxml-->
+<view class="page">
+  <view class="weui-cells__title">填写登陆信息</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">用户名:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" value="" placeholder="请输入用户名" bindinput='onGetUsername' />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">密码:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" value="{{password}}" placeholder="请输入密码" password='true' bindinput='onGetPassword' />
+      </view>
+    </view>
+  </view>
+  <view class="checkbox-sp-area">
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox" wx:for="{{items}}" wx:key="property">
+        <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+      </label>
+    </checkbox-group>
+  </view>
+  <view class="button-sp-area">
+    <button class="weui-btn" type="primary" plain="true" bindtap='onLogin' >登陆</button>
+  </view>
+</view>

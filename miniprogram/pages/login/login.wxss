@@ -1,0 +1,13 @@
+/* miniprogram/pages/login/login.wxss */
+
+.button-sp-area{
+    margin: 0 auto;
+    padding-top: 15px;
+    width: 60%;
+}
+
+.checkbox-sp-area{
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-left: 15px;
+}
