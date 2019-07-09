@@ -7,10 +7,10 @@
         <view class="weui-label">ID:</view>
       </view>
       <view class="weui-cell__bd">
-        <input class="weui-input" value="{{macAddr}}" placeholder="请输入设备ID码" />
+        <input class="weui-input" value="{{macAddr}}" placeholder="请输入设备ID码" bindinput='onGetMACAddr' />
       </view>
       <view class="weui-cell__ft">
-        <image class="weui-vcode-img" src="../../images/QRCode.jpg" style="width: 50px" bindtap='onGetMACAddr'></image>
+        <image class="weui-vcode-img" src="../../images/QRCode.jpg" style="width: 50px" bindtap='onScanMACAddr'></image>
       </view>
     </view>
     <view class="weui-cell weui-cell_input">
@@ -18,7 +18,7 @@
         <view class="weui-label">用户名:</view>
       </view>
       <view class="weui-cell__bd">
-        <input class="weui-input" value="{{username}}" placeholder="请输入用户名" />
+        <input class="weui-input" value="{{username}}" placeholder="请输入用户名" bindinput='onGetUsername' />
       </view>
     </view>
     <view class="weui-cell weui-cell_input">
@@ -26,7 +26,7 @@
         <view class="weui-label">密码:</view>
       </view>
       <view class="weui-cell__bd">
-        <input class="weui-input" value="{{password}}" placeholder="请输入密码" password='true' />
+        <input class="weui-input" value="{{password}}" placeholder="请输入密码" password='true' bindinput='onGetPassword' />
       </view>
     </view>
     <view class="weui-cell weui-cell_input">
@@ -34,11 +34,16 @@
         <view class="weui-label">确认密码:</view>
       </view>
       <view class="weui-cell__bd">
-        <input class="weui-input" value="{{confirmPassword}}" placeholder="请输入密码" password='true' />
+        <input class="weui-input" value="{{confirmPassword}}" placeholder="请输入密码" password='true' bindinput='onGetConfirmPassword' />
       </view>
     </view>
   </view>
+  <view class="warning-text">{{warning_text}}</view>
   <view class="button-sp-area">
-    <button class="weui-btn" type="primary" plain="true">注册</button>
+    <button class="weui-btn" type="primary" plain="true" bindtap='onRegister'>注册</button>
+  </view>
+  <view class="weui-msg__extra-area">
+    <view class="weui-footer__text">Copyright 2019-2020 ©怪番茄</view>
+    <navigator url="https://www.godenx.club" class="weui-footer__link">怪番茄的博客</navigator>
   </view>
 </view>

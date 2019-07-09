@@ -2,6 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logon/logon",
+    "pages/logon/fail",
+    "pages/logon/success",
     "pages/login/login",
     "pages/main/main"
   ],

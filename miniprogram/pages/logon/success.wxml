@@ -1,0 +1,21 @@
+<view class="page">
+  <view class="weui-msg">
+    <view class="weui-msg__icon-area">
+      <icon type="success" size="93"></icon>
+    </view>
+    <view class="weui-msg__text-area">
+      <view class="weui-msg__title">注册成功</view>
+      <view class="weui-msg__desc">现在可以使用登陆信息直接登陆控制设备了</view>
+    </view>
+    <view class="weui-msg__opr-area">
+      <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" bindtap='onLogin'>登陆</button>
+        <button class="weui-btn" type="default" bindtap='onReturn'>返回主界面</button>
+      </view>
+    </view>
+    <view class="weui-msg__extra-area">
+      <view class="weui-footer__text">Copyright 2019-2020 ©怪番茄</view>
+      <navigator url="https://www.godenx.club" class="weui-footer__link">怪番茄的博客</navigator>
+    </view>
+  </view>
+</view>

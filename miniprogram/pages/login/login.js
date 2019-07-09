@@ -1,6 +1,8 @@
 // miniprogram/pages/login/login.js
 const app = getApp()
 var mqtt = require('../../utils/mqtt.js')
+const db = wx.cloud.database()
+const user = db.collection('user')
 
 Page({
 
@@ -8,9 +10,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    // array: [],
     items: [{
       name: 'saveData',
-      value: '记录登陆密码'
+      value: '自动登陆'
     }, ],
     options: {
       clientId: '',
@@ -20,7 +23,8 @@ Page({
       clean: true,
       reconnectPeriod: 1000,
       connectTimeout: 4000,
-    }
+    },
+    topic: ''
   },
 
   onGetUsername: function(e) {
@@ -31,8 +35,39 @@ Page({
     this.data.options.password = e.detail.value
   },
 
+  onAutoLogin: function() {
+    db.collection('user').add({
+      data: {
+        macaddr: this.data.macAddr,
+        username: this.data.username,
+        password: this.data.password
+      },
+      success: function(res) {}
+    })
+  },
+
   onLogin: function() {
-    app.globalData.client = mqtt.connect('wxs://www.godenx.club/mqtt', this.data.options)
+    var that = this
+
+    db.collection('user').where({
+        username: this.data.options.username,
+        password: this.data.options.password
+      })
+      .get({
+        success: function(res) {
+          if (res.data.length > 0) {
+            that.data.topic = '/' + res.data[0].macaddr
+            console.log('topic', that.data.topic)
+          } else {
+            console.log("登陆失败")
+          }
+        },
+        fail: function(res) {
+          console.log('fail', res.data)
+        }
+      })
+    console.log('ttopic', that.data.topic)
+    app.globalData.client = mqtt.connect('wxs://www.godenx.club/mqtt', that.data.options)
 
     app.globalData.client.on('reconnect', (error) => {
       console.log('正在重连:', error)
@@ -47,12 +82,12 @@ Page({
       wx.navigateTo({
         url: '../main/main',
       })
-      app.globalData.client.subscribe('/Test0', {
+      app.globalData.client.subscribe('/b827eb2a1414', {
         qos: 0
       }, function(err) {
         if (!err) {
           //app.globalData.client.publish('/Test1', 'Hello mqtt')
-          console.log("订阅成功")
+          console.log("订阅成功:", that.data.topic)
         }
       })
     })
@@ -69,7 +104,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.data.options.clientId = getApp().globalData.openid
+    this.data.options.clientId = app.globalData.openid
   },
 
   /**

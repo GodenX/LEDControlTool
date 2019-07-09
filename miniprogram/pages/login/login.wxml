@@ -2,6 +2,19 @@
 <view class="page">
   <view class="weui-cells__title">填写登陆信息</view>
   <view class="weui-cells weui-cells_after-title">
+    <!-- <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">设备ID:</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" value="" placeholder="请输入设备ID" bindinput='onGetUsername' />
+      </view>
+      <view class="weui-cell__ft">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <view class="weui-vcode-btn">列表</view>
+        </picker>
+      </view>
+    </view> -->
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__hd">
         <view class="weui-label">用户名:</view>
@@ -27,6 +40,10 @@
     </checkbox-group>
   </view>
   <view class="button-sp-area">
-    <button class="weui-btn" type="primary" plain="true" bindtap='onLogin' >登陆</button>
+    <button class="weui-btn" type="primary" plain="true" bindtap='onLogin'>登陆</button>
+  </view>
+  <view class="weui-msg__extra-area">
+    <view class="weui-footer__text">Copyright 2019-2020 ©怪番茄</view>
+    <navigator url="https://www.godenx.club" class="weui-footer__link">怪番茄的博客</navigator>
   </view>
 </view>
