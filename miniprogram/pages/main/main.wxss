@@ -1,7 +1,23 @@
 /* miniprogram/pages/main/main.wxss */
 
-.button-sp-area{
-    margin: 0 auto;
-    padding-top: 15px;
-    width: 60%;
+.lightness-contain {
+  display: flex;
+  flex-direction: row;
+}
+
+.main__hd {
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+.button-mini-area {
+  margin: 0 auto;
+  padding-left: 15px;
+  width: 100%;
+}
+
+.button-sp-area {
+  margin: 0 auto;
+  padding-top: 15px;
+  width: 60%;
 }

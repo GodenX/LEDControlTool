@@ -1,7 +1,4 @@
 // miniprogram/pages/logon/logon.js
-const db = wx.cloud.database()
-const user = db.collection('user')
-
 Page({
 
   /**
@@ -78,6 +75,9 @@ Page({
   },
 
   onRegister: function() {
+    const db = wx.cloud.database()
+    const user = db.collection('user')
+
     if (this.data.status == 0b00001111) {
       db.collection('user').add({
         data: {

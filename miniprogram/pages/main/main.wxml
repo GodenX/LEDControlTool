@@ -1,17 +1,45 @@
 <!--miniprogram/pages/main/main.wxml-->
 <view class="page">
-  <view class="weui-cells__title">发送文本</view>
+  <view class="weui-cells__title">彩灯总开关</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_switch">
+      <view class="weui-cell__bd">彩灯总开关</view>
+      <view class="weui-cell__ft">
+        <switch checked />
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells__title">模式0</view>
+  <view class="button-sp-area">
+    <button class="weui-btn" type="primary" plain="true" bindtap='onLightning'>照明模式</button>
+  </view>
+  <view class="weui-cells__title">模式1</view>
+  <view class="button-sp-area">
+    <button class="weui-btn" type="primary" plain="true" bindtap='onCustomizeDisplay'>自定义显示</button>
+  </view>
+  <view class="weui-cells__title">亮度调整</view>
+  <slider show-value value="48" max="48" />
+  <view class="weui-cells__title">模式2</view>
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell weui-cell_input">
-      <view class="weui-cell__bd">
-        <input class="weui-input" value="" placeholder="请输入发送信息" bindinput='onGetSendMessage' />
+      <view class="weui-cell__hd">
+        <input class="weui-input" value="{{username}}" placeholder="请输入需要显示的字符" bindinput='onStrInput' />
+      </view>
+      <view class="weui-cell__ft">
+        <image class="weui-vcode-img" src="../../images/color.jpg" style="margin: 0px 0px 0px 50px; height: 40px; width: 50px" bindtap='onSetColor'></image>
       </view>
     </view>
   </view>
   <view class="button-sp-area">
-    <button class="weui-btn" type="primary" plain="true" bindtap='onSendMessage' >发送消息</button>
+    <button class="weui-btn" type="primary" plain="true" bindtap='onStrSend'>发送字符</button>
+  </view>
+  <view class="weui-cells__title">模式3</view>
+  <view class="button-sp-area">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <button class="weui-btn" type="primary">预设样式选择</button>
+    </picker>
   </view>
   <view class="button-sp-area">
-    <button class="weui-btn" type="primary" plain="true" bindtap='onLogout' >退出登陆</button>
+    <button class="weui-btn" type="warn" plain="true" bindtap='onLogout'>退出登陆</button>
   </view>
 </view>
