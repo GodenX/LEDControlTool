@@ -1,9 +1,17 @@
 <!--index.wxml-->
 <view class="page">
-
+  <view class='page__bd'>
+    <view class='imagesize'>
+      <image class="in-image" src="../../images/cover.jpg"></image>
+    </view>
+  </view>
   <view class="page__bd page__bd_spacing">
-    <button class="weui-btn" type="primary" bindtap="onLogon">注册</button>
-    <button class="weui-btn" type="primary" bindtap="onLogin">登陆</button>
+    <view class="page__title">幻彩万花筒</view>
+    <view class="page__desc"> v0.1.0</view>
+    <view class='button-sp-area'>
+      <button class="weui-btn" type="primary" bindtap="onLogon">注册</button>
+      <button class="weui-btn" type="primary" bindtap="onLogin">登陆</button>
+    </view>
   </view>
 
   <view class="weui-msg__extra-area">

@@ -1,8 +1,15 @@
 /* miniprogram/pages/logon/logon.wxss */
 
+.page__hd {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+}
+
 .button-sp-area{
     margin: 0 auto;
-    padding-top: 15px;
+    padding-top: 20px;
     width: 60%;
 }
 
@@ -12,4 +19,17 @@
     padding-left: 15px;
     font-size: 30rpx;
     color: red;
+}
+
+.return-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.return-link {
+  margin-top: 5px;
+  color: #586c94;
+  font-size: 14px;
 }

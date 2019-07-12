@@ -1,10 +1,13 @@
 <!--miniprogram/pages/logon/logon.wxml-->
 <view class="page">
-  <view class="weui-cells__title">填写注册信息</view>
+  <view class="page__hd">
+    <view class="page__title">账户注册</view>
+    <view class="page__desc">用于绑定用户账号和设备，请通过标签或二位码获取设备ID</view>
+  </view>
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell weui-cell_input weui-cell_vcode">
       <view class="weui-cell__hd">
-        <view class="weui-label">ID:</view>
+        <view class="weui-label">设备ID:</view>
       </view>
       <view class="weui-cell__bd">
         <input class="weui-input" value="{{macAddr}}" placeholder="请输入设备ID码" bindinput='onGetMACAddr' />
@@ -41,6 +44,9 @@
   <view class="warning-text">{{warning_text}}</view>
   <view class="button-sp-area">
     <button class="weui-btn" type="primary" plain="true" bindtap='onRegister'>注册</button>
+  </view>
+  <view class='return-text'>
+    <view class="return-link" bindtap='onReturnIndex' >返回主界面</view>
   </view>
   <view class="weui-msg__extra-area">
     <view class="weui-footer__text">Copyright 2019-2020 ©怪番茄</view>

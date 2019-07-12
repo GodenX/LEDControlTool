@@ -1,6 +1,9 @@
 <!--miniprogram/pages/login/login.wxml-->
 <view class="page">
-  <view class="weui-cells__title">填写登陆信息</view>
+  <view class="page__hd">
+    <view class="page__title">账户登陆</view>
+    <view class="page__desc">使用已注册的账户登陆服务器，开始远程控制设备</view>
+  </view>
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__hd">
@@ -19,15 +22,20 @@
       </view>
     </view>
   </view>
+  <view class="warning-text">{{warning_text}}</view>
   <view class="checkbox-sp-area">
-    <checkbox-group bindchange="onAutoLogin">
-      <label class="checkbox" wx:for="{{isAutoLogin}}" wx:key="property">
+    <checkbox-group bindchange="onSaveInfo">
+      <label class="checkbox" wx:for="{{isSaveInfo}}" wx:key="property">
         <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
       </label>
     </checkbox-group>
   </view>
   <view class="button-sp-area">
     <button class="weui-btn" type="primary" plain="true" bindtap='onLogin'>登陆</button>
+  </view>
+  <view class='register-text'>
+    <view class="page__desc">如果账户未注册，</view>
+    <view class="register-link" bindtap='onRegister' >请点击注册</view>
   </view>
   <view class="weui-msg__extra-area">
     <view class="weui-footer__text">Copyright 2019-2020 ©怪番茄</view>

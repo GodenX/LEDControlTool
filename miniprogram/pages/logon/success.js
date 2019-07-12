@@ -1,12 +1,12 @@
 Page({
   onLogin: function(){
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../login/login'
     })
   },
 
   onReturn: function(){
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../index/index'
     })
   }

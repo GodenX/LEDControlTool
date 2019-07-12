@@ -75,9 +75,11 @@ Page({
   },
 
   onRegister: function() {
+    wx.showLoading({
+      title: '数据加载中',
+    });
     const db = wx.cloud.database()
     const user = db.collection('user')
-
     if (this.data.status == 0b00001111) {
       db.collection('user').add({
         data: {
@@ -87,13 +89,15 @@ Page({
         },
         success: function(res) {
           console.log(res)
-          wx.navigateTo({
+          wx.hideLoading()
+          wx.redirectTo({
             url: 'success'
           })
         },
         fail: function(res){
           console.log(res)
-          wx.navigateTo({
+          wx.hideLoading()
+          wx.redirectTo({
             url: 'fail'
           })
         } 
@@ -103,6 +107,12 @@ Page({
         warning_text: '请正确填写信息！'
       })
     }
+  },
+
+  onReturnIndex: function(){
+    wx.redirectTo({
+      url: '../index/index'
+    })
   },
 
   /**
