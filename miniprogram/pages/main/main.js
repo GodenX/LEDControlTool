@@ -9,10 +9,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    array: ['字符滚动显示', '幻彩呼吸灯', '光带滚动显示'],
-    index: 0,
+    styles: ['', '字符滚动显示', '幻彩呼吸灯', '光带滚动显示'],
+    stylesIndex: 0,
     topic: '',
     message: ''
+  },
+
+  bindstylesChange: function (e) {
+    console.log('picker styles 发生选择改变，携带值为', e.detail.value);
+
+    this.setData({
+      stylesIndex: e.detail.value
+    })
   },
 
   onGetSendMessage: function(e) {

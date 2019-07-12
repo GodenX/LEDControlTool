@@ -10,7 +10,7 @@
         <input class="weui-input" value="{{macAddr}}" placeholder="请输入设备ID码" bindinput='onGetMACAddr' />
       </view>
       <view class="weui-cell__ft">
-        <image class="weui-vcode-img" src="../../images/QRCode.jpg" style="width: 50px" bindtap='onScanMACAddr'></image>
+        <image class="weui-vcode-img" src="../../images/QRCode.jpg" style="height: 40px; width: 50px" bindtap='onScanMACAddr'></image>
       </view>
     </view>
     <view class="weui-cell weui-cell_input">
